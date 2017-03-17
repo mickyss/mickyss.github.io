@@ -169,7 +169,15 @@ from a
 LEFT JOIN user u on u.user_id = a.user_id and a.center_user = 0
 LEFT JOIN quser qu on qu.user_id = a.user_id and a.center_user = 1</code></p>
 <pre><code>因为需要判断值是否为null，值为null的列做任何运算都会等于null
-</code></pre>
+</code></pre><p>附：ISNULL语法</p>
+<p>使用指定的替换值替换 NULL。</p>
+<p>语法<br>ISNULL ( check_expression , replacement_value )</p>
+<p>参数<br>check_expression</p>
+<p>将被检查是否为 NULL的表达式。check_expression 可以是任何类型的。</p>
+<p>replacement_value</p>
+<p>在 check_expression 为 NULL时将返回的表达式。replacement_value 必须与 check_expresssion 具有相同的类型。</p>
+<p><a href="http://database.51cto.com/art/201009/224323.htm" title="isnull" target="_blank" rel="external">http://database.51cto.com/art/201009/224323.htm</a></p>
+
       
 
       
