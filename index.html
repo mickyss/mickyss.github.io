@@ -144,6 +144,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sql合并列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/17/sql合并列/">sql合并列</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/17/sql合并列/" class="archive-article-date">
+  	<time datetime="2017-03-17T14:25:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="sql合并列的基本使用情况是因为有些业务需要根据表字段的值而选择left-join哪张表"><a href="#sql合并列的基本使用情况是因为有些业务需要根据表字段的值而选择left-join哪张表" class="headerlink" title="sql合并列的基本使用情况是因为有些业务需要根据表字段的值而选择left join哪张表"></a>sql合并列的基本使用情况是因为有些业务需要根据表字段的值而选择left join哪张表</h1><p><code>select isnull(a.name,&#39;&#39;)+isnull(u.name,&#39;&#39;) as name
+from a
+LEFT JOIN user u on u.user_id = a.user_id and a.center_user = 0
+LEFT JOIN quser qu on qu.user_id = a.user_id and a.center_user = 1</code></p>
+<pre><code>因为需要判断值是否为null，值为null的列做任何运算都会等于null
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/17/sql合并列/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+ 
+
+  
     <article id="post-在sourcetree双击了某个commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -377,6 +443,10 @@ git merge 42d4fg2(一串sha1值)**
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
