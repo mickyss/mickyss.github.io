@@ -144,6 +144,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-在oracle数据库创建定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/17/在oracle数据库创建定时任务/">在oracle数据库创建定时任务</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/17/在oracle数据库创建定时任务/" class="archive-article-date">
+  	<time datetime="2017-09-17T14:06:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>* 查询job
+* select job,broken,what,interval,t.* from user_jobs t;
+* job创建语句
+</code></pre><p>create or replace procedure procautoexecjob as begin declare job number; BEGIN DBMSJOB.SUBMIT( JOB =&gt; job, /自动生成JOBID/ WHAT =&gt; ‘psspworkloadpushdata;’, /需要执行的过程或SQL语句/ NEXTDATE =&gt; TRUNC(SYSDATE+1)+(060+30)/(2460), /初次执行时间，12点30分/ INTERVAL =&gt; ‘TRUNC(SYSDATE+1)+(060+30)/(2360)’ /每天12点30分/ );<br>COMMIT;<br>  DBMS_JOB.RUN(job);<br>end;</p>
+<p>end procautoexec_job;</p>
+<pre><code>* 删除Job 在Pl/sql dbms_jobs 文件夹下直接删除
+
+* 首先确定要停止的JOB号 在10g中可通过DbaJobsRunning进行确认。 查找正在运行的JOB: select sid from dbajobsrunning;
+
+* 定时语法
+
+* todate( concat( tochar( sysdate+1,&apos;dd-mm-yyyy&apos;),&apos; 23:00:00&apos;),&apos;dd-mm-yyyy hh24:mi:ss&apos;)
+</code></pre><h1 id="注：dbms-jobs-是在plsql文件夹下的，-navicat是看不到Job的。"><a href="#注：dbms-jobs-是在plsql文件夹下的，-navicat是看不到Job的。" class="headerlink" title="注：dbms_jobs 是在plsql文件夹下的， navicat是看不到Job的。"></a>注：dbms_jobs 是在plsql文件夹下的， navicat是看不到Job的。</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/17/在oracle数据库创建定时任务/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+ 
+
+  
     <article id="post-git提交前需要先合并commit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -513,6 +586,10 @@ git merge 42d4fg2(一串sha1值)**
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sourcetree</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
             
             <div class="clearfix"></div>
