@@ -11,7 +11,7 @@
   <meta name="description" content="* 查询job
 * select job,broken,what,interval,t.* from user_jobs t;
 * job创建语句
-create or replace procedure procautoexecjob as begin declare job number; BEGIN DBMSJOB.SUBMIT( JOB =&amp;gt; job, /自动生成JOBID/ WHAT">
+create or replace procedure procautoexecjobas begin declare job number;BEGIN DBMSJOB.SUBMIT( JOB =&amp;gt; job, /自动生成JOBID/ W    H">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在oracle数据库创建定时任务">
 <meta property="og:url" content="http://yitiaoxinqing.com/2017/09/17/在oracle数据库创建定时任务/index.html">
@@ -19,14 +19,14 @@ create or replace procedure procautoexecjob as begin declare job number; BEGIN D
 <meta property="og:description" content="* 查询job
 * select job,broken,what,interval,t.* from user_jobs t;
 * job创建语句
-create or replace procedure procautoexecjob as begin declare job number; BEGIN DBMSJOB.SUBMIT( JOB =&amp;gt; job, /自动生成JOBID/ WHAT">
-<meta property="og:updated_time" content="2017-09-16T16:43:28.094Z">
+create or replace procedure procautoexecjobas begin declare job number;BEGIN DBMSJOB.SUBMIT( JOB =&amp;gt; job, /自动生成JOBID/ W    H">
+<meta property="og:updated_time" content="2017-09-16T16:47:17.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在oracle数据库创建定时任务">
 <meta name="twitter:description" content="* 查询job
 * select job,broken,what,interval,t.* from user_jobs t;
 * job创建语句
-create or replace procedure procautoexecjob as begin declare job number; BEGIN DBMSJOB.SUBMIT( JOB =&amp;gt; job, /自动生成JOBID/ WHAT">
+create or replace procedure procautoexecjobas begin declare job number;BEGIN DBMSJOB.SUBMIT( JOB =&amp;gt; job, /自动生成JOBID/ W    H">
   
     <link rel="alternative" href="/atom.xml" title="Mickyss的博客" type="application/atom+xml">
   
@@ -175,7 +175,7 @@ create or replace procedure procautoexecjob as begin declare job number; BEGIN D
         <pre><code>* 查询job
 * select job,broken,what,interval,t.* from user_jobs t;
 * job创建语句
-</code></pre><p>create or replace procedure procautoexecjob as begin declare job number; BEGIN DBMSJOB.SUBMIT( JOB =&gt; job, /自动生成JOBID/ WHAT =&gt; ‘psspworkloadpushdata;’, /需要执行的过程或SQL语句/ NEXTDATE =&gt; TRUNC(SYSDATE+1)+(060+30)/(2460), /初次执行时间，12点30分/ INTERVAL =&gt; ‘TRUNC(SYSDATE+1)+(060+30)/(2360)’ /每天12点30分/ );<br>COMMIT;<br>  DBMS_JOB.RUN(job);<br>end;</p>
+</code></pre><p>create or replace procedure procautoexecjob<br>as<br> begin declare job number;<br>BEGIN DBMSJOB.SUBMIT( JOB =&gt; job, /自动生成JOBID/ W<br>    HAT =&gt; ‘psspworkloadpushdata;’, /需要执行的过程或SQL语句/<br>    NEXTDATE =&gt; TRUNC(SYSDATE+1)+(060+30)/(2460), /初次执行时间，12点30分/ INTERVAL =&gt; ‘TRUNC(SYSDATE+1)+(060+30)/(2360)’ /每天12点30分/ );<br>COMMIT;<br>  DBMS_JOB.RUN(job);<br>end;</p>
 <p>end procautoexec_job;</p>
 <pre><code>* 删除Job 在Pl/sql dbms_jobs 文件夹下直接删除
 
@@ -184,7 +184,7 @@ create or replace procedure procautoexecjob as begin declare job number; BEGIN D
 * 定时语法
 
 * todate( concat( tochar( sysdate+1,&apos;dd-mm-yyyy&apos;),&apos; 23:00:00&apos;),&apos;dd-mm-yyyy hh24:mi:ss&apos;)
-</code></pre><h1 id="注：dbms-jobs-是在plsql文件夹下的，-navicat是看不到Job的。"><a href="#注：dbms-jobs-是在plsql文件夹下的，-navicat是看不到Job的。" class="headerlink" title="注：dbms_jobs 是在plsql文件夹下的， navicat是看不到Job的。"></a>注：dbms_jobs 是在plsql文件夹下的， navicat是看不到Job的。</h1>
+</code></pre><h1 id="注：dbms-jobs-是在plsql文件夹下的，-navicat是看不到Job的。"><a href="#注：dbms-jobs-是在plsql文件夹下的，-navicat是看不到Job的。" class="headerlink" title="注：dbms_jobs 是在plsql文件夹下的， navicat是看不到Job的。"></a>注：dbms_jobs 是在plsql文件夹下的， navicat是看不到Job的。</h1><h1 id="创建job，然后执行是通过存储过程去触发的。"><a href="#创建job，然后执行是通过存储过程去触发的。" class="headerlink" title="创建job，然后执行是通过存储过程去触发的。"></a>创建job，然后执行是通过存储过程去触发的。</h1>
       
 
       
